@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import IntInput from './IntInput.jsx';
+import NumberInput from './NumberInput.jsx';
 import styles from '../styles/app.module.css';
 
 var getTableLen,getWinLen;
@@ -11,8 +11,8 @@ const Controls = (props) => {
 
     return(
         <div className={styles.center}>
-            <IntInput label="размерность" initValue={3} callback={(c)=>{getTableLen = c;}}/>
-            <IntInput label="длиня ряда для победы" initValue={3} callback={(c)=>{getWinLen = c;}}/>
+            <NumberInput label="размерность" initValue={3} callback={(c)=>{getTableLen = c;}} min={2} max={99}/>
+            <NumberInput label="длиня ряда для победы" initValue={3} callback={(c)=>{getWinLen = c;}} min={1} max={99}/>
             <button onClick={refresh} width='100%'> restart </button>
         </div>
     );
